@@ -46,8 +46,8 @@ export default function Navbar() {
   );
 
   return (
-    <div>
-      <div className="navbar bg-transparent max-w-7xl mx-auto">
+    <div className=''>
+      <div className="navbar lg:px-32  bg-transparent absolute z-10">
         <div className="navbar-start">
           <Link href="/" className='flex items-center gap-2'>
             <Image src={logo} alt='' width={40} />
@@ -66,18 +66,18 @@ export default function Navbar() {
         {/* Right Side for Desktop */}
         <div className="navbar-end hidden lg:flex gap-4 items-center">
           <div className="flex items-center gap-2">
-            <MdOutlineFavorite />
-            <p>Favorites</p>
+            <MdOutlineFavorite className='text-white w-5 h-5' />
+            <p className='text-white font-medium'>Favorites</p>
           </div>
           <div className="flex items-center gap-2">
             
             <Badge count={5}>
-                    <FaCartShopping  className='w-5 h-5' />
+                    <FaCartShopping  className='text-white w-5 h-5' />
             </Badge>
-            <p className=''>Carts</p>
+            <p className='text-white font-medium'>Carts</p>
           </div>
           <Link href="/signin">
-            <button className="btn btn-outline">Sign in</button>
+            <button className="btn bg-transparent shadow-none text-white">Sign in</button>
           </Link>
         </div>
 

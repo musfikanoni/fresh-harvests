@@ -26,9 +26,9 @@ export default function Footer() {
                 </div>
                 <div className=" pt-14">
                     <p className='ml-2'>Download App:</p>
-                    <div className="flex items-center gap-3">
-                        <Image src={app} alt=''  width={150} />
-                        <Image src={google} alt='' width={145} />
+                    <div className="flex items-center gap-2">
+                        <Image src={app} alt=''  width={140} />
+                        <Image src={google} alt='' width={135} />
                     </div>
                 </div>
             </aside>
