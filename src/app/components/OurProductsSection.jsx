@@ -1,21 +1,46 @@
-// src/components/OurProductsSection.jsx
-'use client';
 
-
+import Link from 'next/link';
 import React from 'react';
 
-
-const OurProductsSection = () => {
-
+export default async function OurProductsSection() {
+  const res = await fetch("https://code-commando.com/api/v1/products", { cache: 'no-store' });
+  const data = await res.json();
+  const products = data.data || [];
 
   return (
-    <div>
-      <h2 className="text-xl font-bold">All Categories</h2>
-      <ul>
-       
-      </ul>
+    <div className="">
+      <h3 className='text-center text-[#749B3F] text-xl font-bold'><span className='bg-slate-200 px-3 rounded py-1.5'>Our Products</span></h3>
+      <h2 className='text-center font-bold text-4xl py-5'>Our Fresh Products</h2>
+      <div className="lg:w-2/6 w-6/6 lg:px-0 px-5 mx-auto pb-5">
+        <p className='text-center'>We pride ourselves on offering a wide variety of fresh and flavorful fruits, vegetables, and salad ingredients.</p></div>
+      <div className='grid grid-cols-12 gap-4 mx-auto max-w-7xl'>
+        {Array.isArray(products) && products.length > 0 ? (
+          products.slice(0, 6).map((item) => (
+              
+          <div key={item.id} className="card lg:col-span-4 col-span-6 bg-base-100 my-4 lg:w-96 w-44 shadow-sm">
+            <Link href={"/"}>
+              <figure className="">
+                <img
+                  src={item.images}
+                  alt="foods"
+                  className="rounded-xl  h-[200px]" />
+              </figure>
+              <div className="card-body items-center text-center">
+                <h2 className="card-title">{item.productName}</h2>
+                <p className="mt-2 font-bold text-green-600">${item.price.toFixed(2)}</p>
+                <div className="w-full">
+                  <button className="btn btn-outline w-full hover:bg-[#FF6A1A] hover:text-white">Add to cart</button>
+                </div>
+              </div>
+            </Link>
+          </div>
+              
+          
+          ))
+        ) : (
+          <p className="col-span-12 text-center">No products found.</p>
+        )}
+      </div>
     </div>
   );
-};
-
-export default OurProductsSection;
+}

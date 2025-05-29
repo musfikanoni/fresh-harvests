@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { MdOutlineFavorite } from "react-icons/md";
 import { FaCartShopping } from "react-icons/fa6";
+import logo from '../../public/assets/logo.png';
+import Image from 'next/image';
 
 export default function Navbar() {
 
@@ -47,8 +49,10 @@ export default function Navbar() {
     <div>
       <div className="navbar bg-transparent max-w-7xl mx-auto">
         <div className="navbar-start">
-          <Link href="/">
-            <h2>Fresh Harvests</h2>
+          <Link href="/" className='flex items-center gap-2'>
+            <Image src={logo} alt='' width={40} />
+            <h2 className='lg:text-2xl text-xl font-bold'>Fresh Harvests</h2>
+
           </Link>
         </div>
 
