@@ -13,3 +13,12 @@
     background-size: cover;
 }
 
+
+.special {
+    background-image: url('../../public/assets/sp.png');
+    background-repeat: no-repeat;
+    width: 100%;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+}
