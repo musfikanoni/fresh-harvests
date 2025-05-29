@@ -6,6 +6,7 @@ import { MdOutlineFavorite } from "react-icons/md";
 import { FaCartShopping } from "react-icons/fa6";
 import logo from '../../public/assets/logo.png';
 import Image from 'next/image';
+import Login from '@/app/components/login/Login';
 
 export default function Navbar() {
 
@@ -35,6 +36,12 @@ export default function Navbar() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+
+      const openModal = () => {
+    document.getElementById('my_modal_3')?.showModal();
+  };
+
 
   const navMenu = () => (
     <>
@@ -76,9 +83,7 @@ export default function Navbar() {
             </Badge>
             <p className='text-white font-medium'>Carts</p>
           </div>
-          <Link href="/signin">
-            <button className="btn bg-transparent shadow-none text-white">Sign in</button>
-          </Link>
+          <button onClick={openModal} className="text-left btn bg-transparent shadow-none text-white">Sign in</button>
         </div>
 
         {/* Mobile Dropdown Menu */}
@@ -102,13 +107,22 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link href="/signin">
-                <button className="btn btn-outline w-full">Sign In</button>
-              </Link>
+              <button onClick={openModal} className="text-left">Sign in</button>
             </li>
           </ul>
         </div>
       </div>
+
+
+      <dialog id="my_modal_3" className="modal">
+        <div className="modal-box w-11/12 max-w-md mx-auto">
+          <form method="dialog">
+            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          </form>
+          <Login />
+        </div>
+      </dialog>
+
     </div>
   )
 }
