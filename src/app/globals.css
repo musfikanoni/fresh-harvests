@@ -1,3 +1,7 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+.pcolor {
+    --color-primary: #749B3F;
+}
+
