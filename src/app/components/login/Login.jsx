@@ -1,5 +1,5 @@
 import React from 'react'
-import SocialLogin from '@/app/components/login/components/SocialLogin';
+import SocialLogin from '@/app/components/specialOffer/components/SocialLogin';
 import { signIn, signOut } from "next-auth/react"
 
 export default function Login() {

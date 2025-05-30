@@ -33,22 +33,22 @@ export default function CountdownTimer({ targetDate }) {
   }, [targetDate]);
 
   return (
-    <div className="flex gap-4 text-center text-xl mt-4">
-      <div className="bg-white shadow-xl px-3 py-3 rounded">
-        <p>{timeLeft.days}</p>
-        <span>Days</span>
+    <div className="flex gap-4 text-center mt-4">
+      <div className="bg-white shadow-xl lg:px-3 px-1.5 lg:py-3 py-2 rounded">
+        <p className="lg:text-xl text-base">{timeLeft.days}</p>
+        <span className="lg:text-xl text-xs">Days</span>
       </div>
-      <div className="bg-white shadow-xl px-3 py-3 rounded">
-        <p>{timeLeft.hours}</p>
-        <span>Hours</span>
+      <div className="bg-white shadow-xl lg:px-3 px-1.5 lg:py-3 py-2 rounded">
+        <p className="lg:text-xl text-base">{timeLeft.hours}</p>
+        <span className="lg:text-xl text-xs">Hours</span>
       </div>
-      <div className="bg-white shadow-xl px-3 py-3 rounded">
-        <p>{timeLeft.minutes}</p>
-        <span>Minutes</span>
+      <div className="bg-white shadow-xl lg:px-3 px-1.5 lg:py-3 py-2 rounded">
+        <p className="lg:text-xl text-base">{timeLeft.minutes}</p>
+        <span className="lg:text-xl text-xs">Minutes</span>
       </div>
-      <div className="bg-white shadow-xl px-3 py-3 rounded">
-        <p>{timeLeft.seconds}</p>
-        <span>Seconds</span>
+      <div className="bg-white shadow-xl lg:px-3 px-1.5 lg:py-3 py-2 rounded">
+        <p className="lg:text-xl text-base">{timeLeft.seconds}</p>
+        <span className="lg:text-xl text-xs">Seconds</span>
       </div>
     </div>
   );

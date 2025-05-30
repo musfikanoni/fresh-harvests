@@ -4,10 +4,10 @@ import Image from 'next/image'
 
 export default function About() {
   return (
-    <div className='mx-auto max-w-7xl my-10'>
+    <div className='mx-auto max-w-7xl my-16'>
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className=''>
-            <Image src={about} className='lg:h-[630px] h-[450px] w-[470px] lg:w-[670px]' />
+            <Image src={about} className='lg:h-[600px] h-[380px] w-[350px] lg:w-[670px]' />
         </div>
         <div className="lg:mt-44 mt-12 lg:pl-0 pl-5">
             <span className='bg-[#759b3f22] text-sm lg:text-base px-4 py-2.5 rounded text-[#749B3F] font-bold'>About Us</span>

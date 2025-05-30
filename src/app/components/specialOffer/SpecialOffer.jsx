@@ -1,21 +1,30 @@
 import React from 'react'
-import CountdownTimer from '../login/components/CountdownTimer'
+import CountdownTimer from './components/CountdownTimer'
+import Image from 'next/image'
+import fruit from '../../../../public/assets/about-fruit.png';
 
 
 export default function SpecialOffer() {
   return (
     <div className='special h-[75vh] w-[490px] lg:w-[1140px]'>
-      <div className="mx-auto max-w-7xl">
-        <span className='bg-[#759b3f22] text-sm lg:text-base  px-4 py-2.5 rounded text-[#749B3F] font-bold'>Special Offer</span>
-        <h2 className='lg:text-4xl text-3xl font-bold my-3'>Seasonal Fruit Bundle</h2>
-        <h3 className='lg:text-3xl font-bold text-2xl'>Discount up to <span className='text-[#FF6A1A]'>80% OFF</span></h3>
-        
+      <div className="mx-auto max-w-7xl lg:flex flex-col items-center justify-between">
+        <div className='mt-20 '>
+            <div className="flex lg:justify-start justify-center">
+              <span className='bg-[#759b3f22] text-sm lg:text-base  px-4 py-2.5 rounded text-[#749B3F] font-bold'>Special Offer</span>
+            </div>
+            <h2 className='lg:text-4xl text-2xl lg:text-left text-center font-bold my-3'>Seasonal Fruit Bundle</h2>
+            <h3 className='lg:text-3xl lg:text-left text-center font-bold text-2xl'>Discount up to <span className='text-[#FF6A1A]'>80% OFF</span></h3>
+            
 
-        <CountdownTimer targetDate="2025-06-02T00:00:00" />
-        <div className="mt-7">
-            <span className='bg-[#176D38] px-5 py-3 rounded-full font-extrabold'>CODE : <span className='text-warning'>FRESH28</span></span>
-      </div>
+            <CountdownTimer targetDate="2025-06-05T00:00:00" />
+            <div className="mt-16">
+                <span className='bg-[#176D38] px-5 py-3 lg:text-2xl text-base rounded-full font-bold'>CODE : <span className='text-warning'>FRESH28</span></span>
+            </div>
+          </div>
+        <div className='mt-16'>
+          <Image src={fruit} alt='' className='lg:w-[625px] w-[425px] lg:h-[380px] h-[280px]' />
         </div>
+      </div>
       
     </div>
   )
