@@ -1,21 +1,20 @@
-
 import Link from 'next/link';
-import React from 'react';
+import React from 'react'
 
-export default async function OurProductsSection() {
-  const res = await fetch("https://code-commando.com/api/v1/products", { cache: 'no-store' });
+export default  async function RelatedProducts() {
+    const res = await fetch("https://code-commando.com/api/v1/products", { cache: 'no-store' });
   const data = await res.json();
   const products = data.data || [];
 
+
   return (
-    <div className="mt-28">
+    <div>
+      <div className="mt-28">
       <h3 className='text-center text-[#749B3F] text-xl font-bold'><span className='bg-slate-200 px-3 rounded py-1.5'>Our Products</span></h3>
-      <h2 className='text-center font-bold text-4xl py-5'>Our Fresh Products</h2>
-      <div className="lg:w-2/6 w-6/6 lg:px-0 px-5 mx-auto pb-5">
-        <p className='text-center'>We pride ourselves on offering a wide variety of fresh and flavorful fruits, vegetables, and salad ingredients.</p></div>
+      <h2 className='text-center font-bold text-4xl py-5'>Related products</h2>
       <div className='grid grid-cols-12 gap-4 mx-auto max-w-7xl'>
         {Array.isArray(products) && products.length > 0 ? (
-          products.slice(0, 6).map((item) => (
+          products.slice(0, 3).map((item) => (
               
           <div key={item.id} className="card lg:col-span-4 col-span-6 bg-base-100 my-4 lg:w-96 w-44 shadow-sm">
             <Link href={`/product/${item.id}`}>
@@ -47,7 +46,9 @@ export default async function OurProductsSection() {
             See All Products
         </button>
         </Link>
+
       </div>
     </div>
-  );
+    </div>
+  )
 }
