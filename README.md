@@ -1,6 +1,9 @@
 # 🌾 Fresh Harvests
 
-Live link: https://fresh-harvests-gamma.vercel.app/
+Overview Screenshot
+![](https://i.ibb.co/spLnrxL9/screencapture-localhost-3000-2025-05-30-23-09-46.png)
+
+Live link: https://fresh-lac.vercel.app/
 
 This project is a frontend development assignment for **SM Technology**, designed to replicate the provided Figma design and integrate backend APIs using **Next.js**, **Tailwind CSS**, and **Redux Toolkit with RTK Query**.
 
